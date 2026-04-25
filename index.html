@@ -1,216 +1,260 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ג׳מילה | שווארמה ובשרים בפתח תקווה</title>
-  <meta name="description" content="ג׳מילה פתח תקווה - שווארמה הודו, עגל ומיקס, שיפודים, שניצל, סלטים ותוספות. תוצרת הארץ 3, פתח תקווה." />
+  <title>שווארמה ג׳מילה | פתח תקווה</title>
+  <meta name="description" content="שווארמה ג׳מילה בפתח תקווה — שווארמה הודו, עגל ומיקס, קבב, פרגית, שניצל, סלטים ותוספות. תוצרת הארץ 3, פתח תקווה." />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            jamila: {
+              dark: '#18110b',
+              brown: '#5a2f18',
+              gold: '#f4b23c',
+              cream: '#fff7e8'
+            }
+          },
+          fontFamily: {
+            sans: ['Heebo', 'Arial', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&display=swap" rel="stylesheet">
   <style>
     html { scroll-behavior: smooth; }
-    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    body { font-family: Heebo, Arial, sans-serif; }
+    .review-scroll::-webkit-scrollbar { display: none; }
+    .review-scroll { -ms-overflow-style: none; scrollbar-width: none; }
   </style>
 </head>
-<body class="bg-stone-950 text-stone-50">
-  <!-- Header -->
-  <header class="sticky top-0 z-50 border-b border-yellow-500/20 bg-stone-950/95 backdrop-blur">
-    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-      <a href="#top" class="flex items-center gap-3">
-        <div class="flex h-11 w-11 items-center justify-center rounded-full bg-yellow-400 text-xl font-black text-stone-950">ג׳</div>
-        <div>
-          <p class="text-lg font-black leading-tight">ג׳מילה</p>
-          <p class="text-xs text-stone-300">שווארמה ובשרים | פתח תקווה</p>
-        </div>
-      </a>
-      <nav class="hidden items-center gap-6 text-sm text-stone-200 md:flex">
-        <a class="hover:text-yellow-300" href="#menu">תפריט</a>
-        <a class="hover:text-yellow-300" href="#about">על המקום</a>
-        <a class="hover:text-yellow-300" href="#hours">שעות</a>
-        <a class="hover:text-yellow-300" href="#contact">הגעה</a>
+<body class="bg-jamila-cream text-jamila-dark">
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-jamila-dark/90 text-white backdrop-blur">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6">
+      <a href="#hero" class="text-lg font-black tracking-tight">ג׳מילה</a>
+      <nav class="hidden items-center gap-6 text-sm font-bold md:flex">
+        <a href="#menu" class="hover:text-jamila-gold">תפריט</a>
+        <a href="#reviews" class="hover:text-jamila-gold">ביקורות</a>
+        <a href="#contact" class="hover:text-jamila-gold">פרטים</a>
       </nav>
-      <a href="tel:0509518595" class="rounded-full bg-yellow-400 px-4 py-2 text-sm font-bold text-stone-950 shadow-lg shadow-yellow-500/20 hover:bg-yellow-300">התקשרו</a>
+      <a href="tel:0779800303" class="hidden rounded-full bg-jamila-gold px-4 py-2 text-sm font-black text-jamila-dark md:inline-flex">התקשרו</a>
+      <button id="menuBtn" class="rounded-xl border border-white/20 p-2 md:hidden" aria-label="פתח תפריט">
+        <span class="block h-0.5 w-6 bg-white"></span>
+        <span class="mt-1.5 block h-0.5 w-6 bg-white"></span>
+        <span class="mt-1.5 block h-0.5 w-6 bg-white"></span>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden border-t border-white/10 bg-jamila-dark px-4 py-4 md:hidden">
+      <div class="grid gap-3 text-base font-bold">
+        <a href="#menu" class="rounded-xl bg-white/5 px-4 py-3">תפריט</a>
+        <a href="#reviews" class="rounded-xl bg-white/5 px-4 py-3">ביקורות</a>
+        <a href="#contact" class="rounded-xl bg-white/5 px-4 py-3">פרטים</a>
+        <a href="tel:0779800303" class="rounded-xl bg-jamila-gold px-4 py-3 text-center text-jamila-dark">077-9800303</a>
+      </div>
     </div>
   </header>
 
-  <main id="top">
-    <!-- Hero -->
-    <section class="relative overflow-hidden">
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(250,204,21,0.22),transparent_34%),linear-gradient(135deg,#0c0a09_0%,#1c1917_45%,#431407_100%)]"></div>
-      <div class="relative mx-auto grid max-w-6xl gap-8 px-4 py-14 md:grid-cols-[1.1fr_0.9fr] md:py-20">
-        <div class="flex flex-col justify-center">
-          <p class="mb-4 inline-flex w-fit rounded-full border border-yellow-400/40 bg-yellow-400/10 px-4 py-2 text-sm font-bold text-yellow-200">שווארמה עסיסית • בשרים על הגריל • סלטים חופשי</p>
-          <h1 class="max-w-3xl text-4xl font-black leading-tight md:text-6xl">ג׳מילה פתח תקווה</h1>
-          <p class="mt-5 max-w-2xl text-lg leading-8 text-stone-200">שווארמה הודו, עגל ומיקס, שיפודי פרגית וקבב, שניצל, סלטים טריים ותוספות חמות — בפיתה, לאפה, טורטייה, בגט או צלחת.</p>
-          <div class="mt-7 flex flex-col gap-3 sm:flex-row">
-            <a href="tel:0509518595" class="rounded-2xl bg-yellow-400 px-6 py-4 text-center font-black text-stone-950 hover:bg-yellow-300">הזמנה טלפונית</a>
-            <a href="https://waze.com/ul?q=תוצרת%20הארץ%203%20פתח%20תקווה" target="_blank" rel="noopener" class="rounded-2xl border border-stone-600 bg-stone-900/70 px-6 py-4 text-center font-bold text-white hover:border-yellow-400">ניווט למסעדה</a>
+  <main>
+    <section id="hero" class="relative overflow-hidden bg-jamila-dark pt-16 text-white">
+      <!--
+        Image setup:
+        - Mobile: the photo is used as a full hero cover with the storefront centered.
+        - Desktop: the same photo sits inside a tall visual card, with a blurred background behind it.
+        This avoids harsh cropping on wide screens while keeping the image strong on phones.
+      -->
+      <div class="absolute inset-0 hidden md:block">
+        <img src="jamila-cover.jpeg" alt="" class="h-full w-full scale-110 object-cover object-[50%_42%] opacity-35 blur-md" />
+        <div class="absolute inset-0 bg-gradient-to-l from-jamila-dark via-jamila-dark/80 to-jamila-dark/45"></div>
+      </div>
+
+      <div class="relative mx-auto grid min-h-[92vh] max-w-6xl items-center gap-8 px-4 py-10 md:grid-cols-[0.95fr_1.05fr] md:px-6 md:py-16">
+        <div class="order-2 md:order-1">
+          <p class="mb-4 inline-flex rounded-full bg-jamila-gold px-4 py-2 text-sm font-black text-jamila-dark">כשר רבנות מקומית · תוצרת הארץ 3, פתח תקווה</p>
+          <h1 class="text-5xl font-black leading-[0.95] md:text-7xl">שווארמה ג׳מילה</h1>
+          <p class="mt-5 max-w-2xl text-xl font-medium text-white/90 md:text-2xl">שווארמה הודו, עגל ומיקס, קבב, פרגית ושניצל — בפיתה, לאפה, בגט, טורטייה או צלחת.</p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="tel:0779800303" class="rounded-2xl bg-jamila-gold px-7 py-4 text-center text-lg font-black text-jamila-dark shadow-xl">התקשרו להזמנה</a>
+            <a href="#menu" class="rounded-2xl border border-white/30 bg-white/10 px-7 py-4 text-center text-lg font-black text-white backdrop-blur hover:bg-white/20">צפו בתפריט</a>
           </div>
-          <p class="mt-4 text-sm text-stone-400">* פרטי תפריט ומחירים מבוססים על מקורות אונליין, מומלץ לאשר מול העסק לפני פרסום סופי.</p>
         </div>
 
-        <div class="rounded-[2rem] border border-yellow-500/20 bg-stone-900 p-4 shadow-2xl shadow-black/40">
-          <div class="aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-yellow-300 via-orange-500 to-red-900">
-            <div class="flex h-full flex-col items-center justify-center p-8 text-center text-stone-950">
-              <div class="mb-5 rounded-full bg-stone-950 px-6 py-3 text-3xl font-black text-yellow-300">ג׳מילה</div>
-              <p class="text-4xl font-black leading-tight">שווארמה<br />ובשרים</p>
-              <p class="mt-4 rounded-full bg-white/80 px-4 py-2 text-sm font-bold">תוצרת הארץ 3, פתח תקווה</p>
+        <div class="order-1 md:order-2">
+          <div class="relative mx-auto h-[58vh] max-h-[560px] min-h-[430px] overflow-hidden rounded-[2rem] shadow-2xl ring-1 ring-white/15 md:h-[76vh] md:max-h-[680px]">
+            <img src="jamila-cover.jpeg" alt="חזית שווארמה ג׳מילה בפתח תקווה" class="h-full w-full object-cover object-[50%_38%] md:object-contain md:bg-jamila-dark" />
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-jamila-dark/80 to-transparent p-5 md:hidden">
+              <p class="text-sm font-bold text-white/90">חזית העסק · ג׳מילה פתח תקווה</p>
             </div>
           </div>
-          <div class="mt-4 grid grid-cols-3 gap-3 text-center text-sm">
-            <div class="rounded-2xl bg-stone-800 p-3"><b class="block text-yellow-300">הודו</b>שווארמה</div>
-            <div class="rounded-2xl bg-stone-800 p-3"><b class="block text-yellow-300">עגל</b>שווארמה</div>
-            <div class="rounded-2xl bg-stone-800 p-3"><b class="block text-yellow-300">מיקס</b>שווארמה</div>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- Highlights -->
-    <section class="mx-auto max-w-6xl px-4 py-10">
-      <div class="grid gap-4 md:grid-cols-4">
-        <div class="rounded-3xl bg-stone-900 p-5 ring-1 ring-white/10"><p class="text-2xl">🥙</p><h3 class="mt-2 font-black">בפיתה / לאפה / בגט</h3><p class="mt-1 text-sm text-stone-300">מבחר ממרחים וסלטים לבחירה</p></div>
-        <div class="rounded-3xl bg-stone-900 p-5 ring-1 ring-white/10"><p class="text-2xl">🔥</p><h3 class="mt-2 font-black">על הגריל</h3><p class="mt-1 text-sm text-stone-300">פרגית, קבב, חזה עוף ושניצל</p></div>
-        <div class="rounded-3xl bg-stone-900 p-5 ring-1 ring-white/10"><p class="text-2xl">🥗</p><h3 class="mt-2 font-black">סלטים במקום</h3><p class="mt-1 text-sm text-stone-300">ירקות, טחינה, עמבה, כרובים ועוד</p></div>
-        <div class="rounded-3xl bg-stone-900 p-5 ring-1 ring-white/10"><p class="text-2xl">📍</p><h3 class="mt-2 font-black">מיקום מרכזי</h3><p class="mt-1 text-sm text-stone-300">תוצרת הארץ 3, פתח תקווה</p></div>
-      </div>
-    </section>
-
-    <!-- Menu -->
-    <section id="menu" class="bg-stone-900/70 py-14">
-      <div class="mx-auto max-w-6xl px-4">
-        <div class="mb-8 flex flex-col justify-between gap-3 md:flex-row md:items-end">
+    <section id="menu" class="px-4 py-14 md:px-6 md:py-20">
+      <div class="mx-auto max-w-6xl">
+        <div class="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div>
-            <p class="font-bold text-yellow-300">התפריט</p>
-            <h2 class="text-3xl font-black md:text-4xl">המנות המובילות</h2>
+            <p class="text-sm font-black uppercase tracking-widest text-jamila-brown">תפריט / שירותים</p>
+            <h2 class="mt-2 text-4xl font-black md:text-5xl">המנות המרכזיות</h2>
           </div>
-          <p class="text-sm text-stone-400">מחירים בש״ח · דורש אישור סופי מול המסעדה</p>
+          <p class="max-w-xl text-sm font-medium text-jamila-dark/70">מחירים לפי מקורות משלוחים זמינים, עשויים להשתנות. מומלץ לאשר מול העסק לפני הזמנה.</p>
         </div>
 
-        <div class="grid gap-6 lg:grid-cols-2">
-          <div class="rounded-3xl bg-stone-950 p-5 ring-1 ring-yellow-500/20">
-            <h3 class="mb-4 text-2xl font-black text-yellow-300">שווארמה</h3>
-            <div class="overflow-x-auto">
-              <table class="w-full min-w-[520px] text-right text-sm">
-                <thead class="border-b border-stone-700 text-stone-300">
-                  <tr><th class="py-3">מנה</th><th>פיתה</th><th>לאפה</th><th>בגט</th><th>טורטייה</th><th>צלחת</th></tr>
-                </thead>
-                <tbody class="divide-y divide-stone-800">
-                  <tr><td class="py-3 font-bold">שווארמה הודו</td><td>62</td><td>72</td><td>70</td><td>72</td><td>89</td></tr>
-                  <tr><td class="py-3 font-bold">שווארמה עגל</td><td>62</td><td>72</td><td>70</td><td>72</td><td>86</td></tr>
-                  <tr><td class="py-3 font-bold">שווארמה מיקס</td><td>62</td><td>72</td><td>70</td><td>72</td><td>89</td></tr>
+        <div class="grid gap-5 lg:grid-cols-3">
+          <div class="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-black/5">
+            <h3 class="mb-4 text-2xl font-black">שווארמה הודו</h3>
+            <div class="overflow-hidden rounded-2xl border border-black/10">
+              <table class="w-full text-sm">
+                <tbody class="divide-y divide-black/10">
+                  <tr><td class="p-3 font-bold">פיתה</td><td class="p-3 text-left font-black">₪62</td></tr>
+                  <tr><td class="p-3 font-bold">בגט</td><td class="p-3 text-left font-black">₪70</td></tr>
+                  <tr><td class="p-3 font-bold">לאפה / טורטייה</td><td class="p-3 text-left font-black">₪72</td></tr>
+                  <tr><td class="p-3 font-bold">צלחת עם פיתה ותוספת</td><td class="p-3 text-left font-black">₪89</td></tr>
                 </tbody>
               </table>
             </div>
-            <p class="mt-4 text-sm text-stone-400">במנות בפיתה/לאפה/בגט/טורטייה: ממרחים וסלטים לבחירה. בצלחת: מוגש עם פיתה ותוספת לבחירה.</p>
           </div>
 
-          <div class="rounded-3xl bg-stone-950 p-5 ring-1 ring-yellow-500/20">
-            <h3 class="mb-4 text-2xl font-black text-yellow-300">שיפודים ושניצל</h3>
-            <div class="overflow-x-auto">
-              <table class="w-full min-w-[520px] text-right text-sm">
-                <thead class="border-b border-stone-700 text-stone-300">
-                  <tr><th class="py-3">מנה</th><th>פיתה</th><th>לאפה</th><th>בגט</th><th>טורטייה</th><th>צלחת</th></tr>
-                </thead>
-                <tbody class="divide-y divide-stone-800">
-                  <tr><td class="py-3 font-bold">שיפוד קבב</td><td>58</td><td>62</td><td>62</td><td>62</td><td>92</td></tr>
-                  <tr><td class="py-3 font-bold">שיפוד פרגית</td><td>58</td><td>62</td><td>62</td><td>62</td><td>92</td></tr>
-                  <tr><td class="py-3 font-bold">שניצל</td><td>55</td><td>62</td><td>62</td><td>60</td><td>77</td></tr>
+          <div class="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-black/5">
+            <h3 class="mb-4 text-2xl font-black">שווארמה עגל</h3>
+            <div class="overflow-hidden rounded-2xl border border-black/10">
+              <table class="w-full text-sm">
+                <tbody class="divide-y divide-black/10">
+                  <tr><td class="p-3 font-bold">פיתה</td><td class="p-3 text-left font-black">₪62</td></tr>
+                  <tr><td class="p-3 font-bold">בגט</td><td class="p-3 text-left font-black">₪70</td></tr>
+                  <tr><td class="p-3 font-bold">לאפה / טורטייה</td><td class="p-3 text-left font-black">₪72</td></tr>
+                  <tr><td class="p-3 font-bold">צלחת עם פיתה ותוספת</td><td class="p-3 text-left font-black">₪86</td></tr>
                 </tbody>
               </table>
             </div>
-            <p class="mt-4 text-sm text-stone-400">צלחת שיפודים: 2 שיפודים, פיתה ו־2 תוספות לבחירה.</p>
+          </div>
+
+          <div class="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-black/5">
+            <h3 class="mb-4 text-2xl font-black">שווארמה מיקס</h3>
+            <div class="overflow-hidden rounded-2xl border border-black/10">
+              <table class="w-full text-sm">
+                <tbody class="divide-y divide-black/10">
+                  <tr><td class="p-3 font-bold">פיתה</td><td class="p-3 text-left font-black">₪62</td></tr>
+                  <tr><td class="p-3 font-bold">בגט</td><td class="p-3 text-left font-black">₪70</td></tr>
+                  <tr><td class="p-3 font-bold">לאפה / טורטייה</td><td class="p-3 text-left font-black">₪72</td></tr>
+                  <tr><td class="p-3 font-bold">צלחת עם פיתה ותוספת</td><td class="p-3 text-left font-black">₪89</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
 
-        <div class="mt-6 grid gap-6 lg:grid-cols-2">
-          <div class="rounded-3xl bg-stone-950 p-5 ring-1 ring-white/10">
-            <h3 class="mb-4 text-2xl font-black text-yellow-300">סלטים</h3>
-            <div class="space-y-3">
-              <div class="flex items-center justify-between gap-4 rounded-2xl bg-stone-900 p-4"><span><b>סלט שווארמה הודו</b><small class="block text-stone-400">ירקות, חסה, בצל בסומק, עגבניות חריף, פטרוזיליה ומלפפון חמוץ</small></span><b>72</b></div>
-              <div class="flex items-center justify-between gap-4 rounded-2xl bg-stone-900 p-4"><span><b>סלט שווארמה עגל</b><small class="block text-stone-400">פירוט דורש אישור</small></span><b>דורש אישור</b></div>
-              <div class="flex items-center justify-between gap-4 rounded-2xl bg-stone-900 p-4"><span><b>סלט חזה עוף</b><small class="block text-stone-400">פירוט ומחיר דורשים אישור</small></span><b>דורש אישור</b></div>
-            </div>
+        <div class="mt-5 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <div class="rounded-3xl bg-jamila-dark p-5 text-white shadow-sm">
+            <h3 class="text-xl font-black">קבב</h3>
+            <p class="mt-2 text-white/75">פיתה ₪58 · לאפה/בגט/טורטייה ₪62 · צלחת ₪92</p>
           </div>
-
-          <div class="rounded-3xl bg-stone-950 p-5 ring-1 ring-white/10">
-            <h3 class="mb-4 text-2xl font-black text-yellow-300">תוספות ושתייה</h3>
-            <div class="grid grid-cols-2 gap-3 text-sm sm:grid-cols-3">
-              <div class="rounded-2xl bg-stone-900 p-4"><b>צ׳יפס קטן</b><span class="block text-yellow-300">25</span></div>
-              <div class="rounded-2xl bg-stone-900 p-4"><b>צ׳יפס גדול</b><span class="block text-yellow-300">35</span></div>
-              <div class="rounded-2xl bg-stone-900 p-4"><b>קובה</b><span class="block text-yellow-300">10</span></div>
-              <div class="rounded-2xl bg-stone-900 p-4"><b>3 סיגרים</b><span class="block text-yellow-300">15</span></div>
-              <div class="rounded-2xl bg-stone-900 p-4"><b>לאפה / פיתה</b><span class="block text-yellow-300">6</span></div>
-              <div class="rounded-2xl bg-stone-900 p-4"><b>קוקה קולה פחית</b><span class="block text-yellow-300">13</span></div>
-            </div>
-            <p class="mt-4 text-sm text-stone-400">תוספות סלטים נפרדות: טחינה, עמבה, כרוב, חצילים, בצל סומק, טרשי ועוד — 6 ₪ לפי המקורות.</p>
+          <div class="rounded-3xl bg-jamila-dark p-5 text-white shadow-sm">
+            <h3 class="text-xl font-black">פרגית</h3>
+            <p class="mt-2 text-white/75">פיתה ₪58 · לאפה/בגט/טורטייה ₪62 · צלחת ₪92</p>
+          </div>
+          <div class="rounded-3xl bg-jamila-dark p-5 text-white shadow-sm">
+            <h3 class="text-xl font-black">שניצל</h3>
+            <p class="mt-2 text-white/75">פיתה ₪55 · טורטייה ₪60 · לאפה/בגט ₪62 · צלחת ₪77</p>
+          </div>
+          <div class="rounded-3xl bg-jamila-dark p-5 text-white shadow-sm">
+            <h3 class="text-xl font-black">תוספות ושתייה</h3>
+            <p class="mt-2 text-white/75">צ׳יפס קטן ₪25 · צ׳יפס גדול ₪35 · קובה ₪10 · פחית קוקה קולה ₪13</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- About -->
-    <section id="about" class="mx-auto grid max-w-6xl gap-8 px-4 py-14 md:grid-cols-2">
-      <div>
-        <p class="font-bold text-yellow-300">על המקום</p>
-        <h2 class="mt-2 text-3xl font-black">גריל בר ישראלי מהיר, חם וטרי</h2>
-        <p class="mt-5 leading-8 text-stone-300">ג׳מילה היא שווארמיה ומסעדת בשרים בפתח תקווה עם דגש על שווארמה הודו/עגל/מיקס, שיפודי פרגית וקבב, חזה עוף, שניצל ופלאפל. המנות מוגשות בפיתה, לאפה, טורטייה, בגט או צלחת עם סלטים ותוספות לבחירה.</p>
-        <div class="mt-6 rounded-3xl border border-yellow-500/20 bg-yellow-400/10 p-5 text-yellow-100">
-          <b>הערה לפרסום:</b> סטטוס כשרות ושעות פעילות מופיעים במקורות אונליין, אבל כדאי לאשר ישירות מול העסק לפני העלאת האתר.
-        </div>
-      </div>
-      <div class="rounded-3xl bg-stone-900 p-6 ring-1 ring-white/10">
-        <h3 class="text-2xl font-black">מה כדאי להדגיש באתר הסופי?</h3>
-        <ul class="mt-5 space-y-3 text-stone-300">
-          <li>✓ תמונות אמיתיות של השווארמה, הסלטים והוויטרינה</li>
-          <li>✓ כפתור ווטסאפ להזמנות, אם העסק מאשר מספר</li>
-          <li>✓ קישור ישיר לוולט / תן ביס להזמנות אונליין</li>
-          <li>✓ אישור סופי למחירים, שעות וכשרות</li>
-        </ul>
-      </div>
-    </section>
+    <section id="reviews" class="bg-white px-4 py-14 md:px-6 md:py-20">
+  <div class="mx-auto max-w-6xl">
+    <div class="mb-8">
+      <p class="text-sm font-black uppercase tracking-widest text-jamila-brown">ביקורות</p>
+      <h2 class="mt-2 text-4xl font-black md:text-5xl">מה לקוחות באמת אומרים</h2>
+    </div>
 
-    <!-- Hours & Contact -->
-    <section id="hours" class="bg-stone-900/70 py-14">
-      <div class="mx-auto grid max-w-6xl gap-6 px-4 md:grid-cols-2">
-        <div class="rounded-3xl bg-stone-950 p-6 ring-1 ring-white/10">
-          <p class="font-bold text-yellow-300">שעות פעילות</p>
-          <h2 class="mt-2 text-3xl font-black">בואו לאכול</h2>
-          <div class="mt-6 divide-y divide-stone-800 text-sm">
-            <div class="flex justify-between py-3"><span>ראשון</span><b>10:45–21:30</b></div>
-            <div class="flex justify-between py-3"><span>שני</span><b>10:30–21:30</b></div>
-            <div class="flex justify-between py-3"><span>שלישי</span><b>10:30–21:30</b></div>
-            <div class="flex justify-between py-3"><span>רביעי</span><b>10:30–21:30</b></div>
-            <div class="flex justify-between py-3"><span>חמישי</span><b>10:30–21:30</b></div>
-            <div class="flex justify-between py-3 text-stone-400"><span>שישי</span><b>סגור</b></div>
-            <div class="flex justify-between py-3 text-stone-400"><span>שבת</span><b>סגור</b></div>
+    <div class="review-scroll flex snap-x gap-4 overflow-x-auto pb-3 md:grid md:grid-cols-3 md:overflow-visible md:pb-0">
+      <article class="min-w-[82%] snap-start rounded-3xl bg-jamila-cream p-6 shadow-sm md:min-w-0">
+        <p class="text-lg font-bold">"שווארמה מצוינת, טעימה מאוד... שירות מכל הלב"</p>
+        <p class="mt-2 text-sm text-jamila-dark/60">— V V</p>
+      </article>
+
+      <article class="min-w-[82%] snap-start rounded-3xl bg-jamila-cream p-6 shadow-sm md:min-w-0">
+        <p class="text-lg font-bold">"שווארמה מדהימה (גם בסוף היום), שירות אדיב"</p>
+        <p class="mt-2 text-sm text-jamila-dark/60">— תומר מאור</p>
+      </article>
+
+      <article class="min-w-[82%] snap-start rounded-3xl bg-jamila-cream p-6 shadow-sm md:min-w-0">
+        <p class="text-lg font-bold">"פיתה מפוצצת בשר, ירקות סופר טריים — שווארמה ממש טובה"</p>
+        <p class="mt-2 text-sm text-jamila-dark/60">— Eyal Yakobi Miller</p>
+      </article>
+
+      <article class="min-w-[82%] snap-start rounded-3xl bg-jamila-cream p-6 shadow-sm md:min-w-0">
+        <p class="text-lg font-bold">"המקום נקי ואסתטי, השירות מצוין והחוויה מושלמת"</p>
+        <p class="mt-2 text-sm text-jamila-dark/60">— יערה מנצור</p>
+      </article>
+
+      <article class="min-w-[82%] snap-start rounded-3xl bg-jamila-cream p-6 shadow-sm md:min-w-0">
+        <p class="text-lg font-bold">"אחת השווארמות הטובות בגוש דן! בשר בשפע והפיתה ענן"</p>
+        <p class="mt-2 text-sm text-jamila-dark/60">— אלמוג נאמני</p>
+      </article>
+
+      <article class="min-w-[82%] snap-start rounded-3xl bg-jamila-cream p-6 shadow-sm md:min-w-0">
+        <p class="text-lg font-bold">"הכי טובה באזור! הכל טרי, נקי ובשפע"</p>
+        <p class="mt-2 text-sm text-jamila-dark/60">— yael neemani</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+    <section id="contact" class="px-4 py-14 md:px-6 md:py-20">
+      <div class="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+        <div class="rounded-[2rem] bg-jamila-dark p-7 text-white md:p-10">
+          <p class="text-sm font-black uppercase tracking-widest text-jamila-gold">פרטים והגעה</p>
+          <h2 class="mt-2 text-4xl font-black md:text-5xl">ג׳מילה פתח תקווה</h2>
+          <div class="mt-7 grid gap-4 text-lg">
+            <p><span class="font-black text-jamila-gold">כתובת:</span> תוצרת הארץ 3, פתח תקווה</p>
+            <p><span class="font-black text-jamila-gold">טלפון:</span> <a class="underline" href="tel:0779800303">077-9800303</a></p>
+            <p><span class="font-black text-jamila-gold">כשרות:</span> כשר רבנות מקומית</p>
+            <p><span class="font-black text-jamila-gold">משלוחים:</span> זמינים דרך Wolt / 10bis לפי אזור וזמינות</p>
           </div>
-          <p class="mt-4 text-xs text-stone-500">דורש אישור לפני פרסום סופי.</p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="tel:0779800303" class="rounded-2xl bg-jamila-gold px-6 py-4 text-center font-black text-jamila-dark">התקשרו עכשיו</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=%D7%AA%D7%95%D7%A6%D7%A8%D7%AA+%D7%94%D7%90%D7%A8%D7%A5+3+%D7%A4%D7%AA%D7%97+%D7%AA%D7%A7%D7%95%D7%95%D7%94" target="_blank" rel="noopener" class="rounded-2xl border border-white/20 px-6 py-4 text-center font-black">ניווט בגוגל מפות</a>
+          </div>
         </div>
 
-        <div id="contact" class="rounded-3xl bg-stone-950 p-6 ring-1 ring-white/10">
-          <p class="font-bold text-yellow-300">יצירת קשר</p>
-          <h2 class="mt-2 text-3xl font-black">ג׳מילה פתח תקווה</h2>
-          <div class="mt-6 space-y-4 text-stone-300">
-            <p><b class="text-white">כתובת:</b> תוצרת הארץ 3, פתח תקווה</p>
-            <p><b class="text-white">טלפון:</b> <a class="text-yellow-300 hover:underline" href="tel:0509518595">050-9518595</a></p>
-            <p><b class="text-white">משלוחים:</b> זמינים דרך פלטפורמות משלוחים — קישור סופי דורש אישור.</p>
+        <div class="rounded-[2rem] bg-white p-7 shadow-sm ring-1 ring-black/5 md:p-10">
+          <h3 class="text-2xl font-black">שעות פעילות</h3>
+          <div class="mt-5 space-y-3 text-base">
+            <div class="flex justify-between border-b border-black/10 pb-3"><span>ראשון</span><strong>10:45–21:30</strong></div>
+            <div class="flex justify-between border-b border-black/10 pb-3"><span>שני–חמישי</span><strong>10:30–21:30</strong></div>
+            <div class="flex justify-between border-b border-black/10 pb-3"><span>שישי</span><strong>סגור</strong></div>
+            <div class="flex justify-between"><span>שבת</span><strong>סגור</strong></div>
           </div>
-          <div class="mt-7 grid gap-3 sm:grid-cols-2">
-            <a href="tel:0509518595" class="rounded-2xl bg-yellow-400 px-5 py-4 text-center font-black text-stone-950 hover:bg-yellow-300">התקשרו עכשיו</a>
-            <a href="https://waze.com/ul?q=תוצרת%20הארץ%203%20פתח%20תקווה" target="_blank" rel="noopener" class="rounded-2xl border border-stone-700 px-5 py-4 text-center font-bold text-white hover:border-yellow-400">פתחו Waze</a>
-          </div>
+          <p class="mt-6 rounded-2xl bg-jamila-cream p-4 text-sm font-medium text-jamila-dark/70">שעות עשויות להשתנות בחגים, בערבי חג ובזמינות משלוחים — מומלץ לאשר טלפונית.</p>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="border-t border-white/10 bg-stone-950 px-4 py-8 text-center text-sm text-stone-400">
-    <p>© <span id="year"></span> ג׳מילה פתח תקווה. אתר תדמית לדוגמה.</p>
-    <p class="mt-2">יש לאשר מול העסק: מחירים, שעות, כשרות, תמונות וקישורי הזמנה.</p>
+  <footer class="border-t border-black/10 px-4 py-8 text-center text-sm text-jamila-dark/60 md:px-6">
+    <p>© <span id="year"></span> שווארמה ג׳מילה · אתר נחיתה חד־עמודי</p>
   </footer>
 
   <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
-</html
+</html>
